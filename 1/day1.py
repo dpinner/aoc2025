@@ -10,14 +10,11 @@ if __name__ == "__main__":
             n = int(l[1:])
             cnt2 += n // 100
             n %= 100
-            if d == 1 and n > (100 - cur):
-                cnt2 += 1
-            elif d == -1 and n > cur > 0:
-                cnt2 += 1
+            cnt2 += int(d == 1 and n > (100 - cur))
+            cnt2 += int(d == -1 and n > cur > 0)
             cur += d * n
             cur %= 100
-            if cur == 0:
-                cnt1 += 1
+            cnt1 += int(cur == 0)
             
 
     print(cnt1)
