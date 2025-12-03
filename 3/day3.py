@@ -1,24 +1,15 @@
 import sys
-import heapq
 
 def joltage(bank: str, n: int) -> int:
     vals = []
-    idx = -1
-    while n > 0:
-        cur = 0
-        for i in range(idx+1, len(bank)-n+1):
-            if cur == 9:
-                break
-            j = int(bank[i])
-            if j > cur:
-                cur = j
-                idx = i
+    for i,b in enumerate(bank):
+        while vals and vals[-1] < int(b) and len(vals) + len(bank) - i > n:
+            vals.pop()
 
-        vals.append(cur)
-        n -= 1
+        if len(vals) < n:
+            vals.append(int(b))
 
     tot = 0
-    n = len(vals)
     for i in range(n):
         tot += (10 ** (n-1-i)) * vals[i]
     return tot
