@@ -1,5 +1,6 @@
 import sys
 import itertools
+from ..d5.day5 import *
 
 if __name__ == "__main__":
     filename = sys.argv[1]
