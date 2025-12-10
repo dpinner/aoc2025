@@ -247,8 +247,6 @@ if __name__ == "__main__":
         if floor.is_valid(locs[pair[0]], locs[pair[1]]):
             break
 
-    print(locs[pair[0]], locs[pair[1]])
-    print(i)
     print(
         (abs(locs[pair[0]][0] - locs[pair[1]][0]) + 1)
         * (abs(locs[pair[0]][1] - locs[pair[1]][1]) + 1)
